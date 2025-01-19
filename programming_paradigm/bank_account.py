@@ -7,7 +7,7 @@ class BankAccount:
     def deposit(self, amount):
         """Add the specified amount to the account balance."""
         self.account_balance += amount
-        print(f"Deposited: ${amount:.1f}")  # Format the deposit message to one decimal place
+        print(f"Deposited: ${amount:.1f}")  # Ensuring the format is .1f for consistency
 
     def withdraw(self, amount):
         """Deduct the specified amount from the account balance if sufficient funds are available."""
@@ -19,7 +19,7 @@ class BankAccount:
 
     def display_balance(self):
         """Display the current balance of the account."""
-        print(f"Current Balance: ${self.account_balance:.2f}")  # Format the balance to two decimal places
+        print(f"Current Balance: ${self.account_balance:.2f}")  # Ensuring two decimal places
 
 
 def main():
