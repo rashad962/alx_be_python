@@ -15,12 +15,16 @@ class BankAccount:
 
     def withdraw(self, amount):
         """Deduct the specified amount from the account balance if sufficient funds are available."""
-        if self.account_balance >= amount:
-            self.account_balance -= amount
-            print(f"Withdrew: ${amount}")
-            return True
+        if amount > 0:
+            if self.account_balance >= amount:
+                self.account_balance -= amount
+                print(f"Withdrew: ${amount}")
+                return True
+            else:
+                print("Insufficient funds.")
+                return False
         else:
-            print("Insufficient funds.")
+            print("Withdrawal amount must be positive.")
             return False
 
     def display_balance(self):
@@ -31,7 +35,7 @@ class BankAccount:
 def main():
     # Initialize the bank account with a starting balance of 100
     account = BankAccount(100)
-    
+
     if len(sys.argv) < 2:
         print("Usage: python bank_account.py <command>:<amount>")
         print("Commands: deposit, withdraw, display")
