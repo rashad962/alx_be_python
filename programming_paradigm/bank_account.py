@@ -7,7 +7,7 @@ class BankAccount:
     def deposit(self, amount):
         """Add the specified amount to the account balance."""
         self.account_balance += amount
-        print(f"Deposited: ${amount:.2f}")  # Format the deposit message
+        print(f"Deposited: ${amount:.1f}")  # Format the deposit message to one decimal place
 
     def withdraw(self, amount):
         """Deduct the specified amount from the account balance if sufficient funds are available."""
@@ -19,7 +19,7 @@ class BankAccount:
 
     def display_balance(self):
         """Display the current balance of the account."""
-        print(f"Current Balance: ${self.account_balance:.2f}")  # Format the balance to 2 decimal places
+        print(f"Current Balance: ${self.account_balance:.2f}")  # Format the balance to two decimal places
 
 
 def main():
@@ -40,7 +40,7 @@ def main():
         account.deposit(amount)
     elif command == "withdraw" and amount is not None:
         if account.withdraw(amount):
-            print(f"Withdrew: ${amount:.2f}")  # Format the withdraw message
+            print(f"Withdrew: ${amount:.2f}")  # Format the withdraw message to two decimal places
         else:
             print("Insufficient funds.")
     elif command == "display":
